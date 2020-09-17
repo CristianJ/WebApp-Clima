@@ -1,0 +1,59 @@
+ <div class="card" *ngIf="!data.current else elseBlock">
+
+
+  <div class="card-header text-center" style="font-size:15px">
+    {{data.dt *1000 | date }}
+  </div>
+
+
+  <div class="card-body">
+
+
+
+    <div class="form-group row ml-5 mr-5 justify-content-center animate__animated animate__fadeInDown">
+
+      <img src="http://openweathermap.org/img/w/{{data.weather[0].icon}}.png" class="text-center">
+    </div>
+
+    <div class="form-group row ml-5 mr-5 grados justify-content-center animate__animated animate__backInLeft">
+       {{data.temp.max}}°C
+    </div>
+
+
+
+  </div>
+
+  </div>
+
+
+<ng-template #elseBlock>
+
+  <div class="card" >
+
+    <div class="card-header text-center" style="font-size:15px">
+     {{data.current.dt *1000 | date }}
+   </div>
+
+
+   <div class="card-body">
+
+
+
+     <div class="form-group row ml-5 mr-5 justify-content-center animate__animated animate__fadeInDown">
+
+       <img src="http://openweathermap.org/img/w/{{data.current.weather[0].icon}}.png" class="text-center">
+     </div>
+
+     <div class="form-group row ml-5 mr-5 grados justify-content-center animate__animated animate__backInLeft">
+        {{data.current.temp}}°C
+     </div>
+
+
+
+   </div>
+ </div>
+
+</ng-template>
+
+
+

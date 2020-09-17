@@ -1,0 +1,11 @@
+img{
+  width:100px;
+  height:100px
+}
+
+.grados{
+  font-size: 45px;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+  color: royalblue;
+  text-align: center;
+}

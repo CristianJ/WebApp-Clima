@@ -1,0 +1,157 @@
+<div class="container h-100">
+  <div class="row h-100 mx-auto justify-content-center align-items-center flex-column ">
+
+
+    <div class="col-md-6 mr-5 animate__animated animate__zoomIn">
+      <div class="form-group row ">
+
+      Escoja un pais y una ciudad
+
+        <mat-form-field class="example-full-width">
+          <mat-label>Pais</mat-label>
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-select name="pais_id" required (selectionChange)="pais_select($event)">
+
+            <mat-option *ngFor="let pais of paises" [value]="pais.id">
+              {{pais.nombre}}
+            </mat-option>
+          </mat-select>
+          <!-- <mat-error *ngIf="checkError('ciudad_id','required')" class="right">Campo requerido</mat-error> -->
+
+
+
+
+        </mat-form-field>
+
+      </div>
+
+
+      <div class="form-group row">
+        <mat-form-field class="example-full-width">
+          <mat-label>Ciudad</mat-label>
+          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-select name="ciudad_id" required [(ngModel)]="defaultValue" (selectionChange)="ciudad_select($event)">
+            <mat-option value="x">Seleccione Uno</mat-option>
+            <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.id">
+              {{ciudad.nombre}}
+            </mat-option>
+          </mat-select>
+
+        </mat-form-field>
+      </div>
+
+    </div>
+
+    <div class="col-md-6 animate__animated animate__zoomIn" *ngIf="clima_actual && defaultValue!='x'">
+      <div class="card">
+        <div class="card-header text-center">
+         Clima para :  {{clima_actual.current.dt * 1000  | date}}
+        </div>
+        <div class="card-body">
+          <div class="form-group row  justify-content-center ">
+
+            <img src="http://openweathermap.org/img/w/{{clima_actual.current.weather[0].icon}}.png" class="text-center">
+
+          </div>
+
+          <div class="form-group row  justify-content-center ">
+            <p class="text-center showTemp"> {{clima_actual.current.temp | number:'1.0-0'}} °C</p>
+          </div>
+
+
+          <div class="scroll" id="style-1">
+
+
+
+
+
+
+            <div *ngFor="let item of clima_pasado " class="card-body cursor">
+
+              <div class="card" (click)="ver_clima(item.current.dt,'fechaPasada')" >
+
+
+                <div class="card-header text-center" style="font-size:15px">
+                  {{item.current.dt *1000 | date }}
+                </div>
+
+
+                <div class="card-body ">
+
+
+
+                  <div class="form-group row ml-5 mr-5">
+
+                    <img src="http://openweathermap.org/img/w/{{item.current.weather[0].icon}}.png" class="text-center">
+                  </div>
+
+                  <div class="form-group row ml-5 mr-5 TempCards ">
+                    {{item.current.temp}}°C
+                  </div>
+
+                </div>
+
+              </div>
+
+
+            </div>
+
+
+
+            <div *ngFor="let item of clima_actual.daily " class="card-body cursor">
+
+              <div class="card" (click)="ver_clima(item.dt,'fechaFutura')">
+
+
+                <div class="card-header text-center" style="font-size:15px">
+                  {{item.dt *1000 | date }}
+                </div>
+
+
+                <div class="card-body">
+
+
+
+                  <div class="form-group row ml-5 mr-5">
+
+                    <img src="http://openweathermap.org/img/w/{{item.weather[0].icon}}.png" class="text-center">
+                  </div>
+
+                  <div class="form-group row ml-5 mr-5 TempCards">
+                     {{item.temp.max}}°C
+                  </div>
+
+
+
+                </div>
+
+
+
+
+              </div>
+            </div>
+
+          </div>
+
+
+
+
+
+
+
+
+
+
+
+
+        </div>
+      </div>
+
+
+
+    </div>
+
+
+
+  </div>
+</div>
