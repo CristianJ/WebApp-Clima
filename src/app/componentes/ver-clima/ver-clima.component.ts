@@ -53,7 +53,7 @@ export class VerClimaComponent implements OnInit {
 
   public datos(ciudad, pais) {
     this.climaService.consultar(ciudad, pais).subscribe((response) => {
-      console.log(response);
+       (response);
       let lat = response.coord.lat;
       let lng = response.coord.lon;
       this.pronosticoPosterior(lat, lng);
