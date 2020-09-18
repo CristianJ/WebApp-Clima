@@ -2,26 +2,30 @@
 
 Aplicacion Web que indica el clima de determinados paises con las respectivas ciudades.
 
-## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+# Descarga del proyecto
 
-## Code scaffolding
+## Requisitos
+  * Tener instalado node en el ordenador
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+1. Descargar el codigo fuente de la siguiente [URL](https://github.com/CristianJ/WebApp-Clima) .
+2. Una vez descargado el proyecto escribir el comando npm install dentro de la carpeta 
+3. Para ejecutar la aplicacion escribir ng serve el cual desplegara dentro de un navegador Web en la direccion localhost:4200 la aplicacion Web
 
-## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+# Funcionaliades
 
-## Running unit tests
+Al iniciar por primera vez la aplicacion mostrara lo ![siguiente](https://escuelajailuba.website/fotos_clima/1.png)
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-## Running end-to-end tests
+Escoger el pais y la ciudad de la cual se desea ver el ![clima](https://escuelajailuba.website/fotos_clima/2.JPG)
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Si deseo ver el clima de 5 dias atras o del 7 dias futuros mover el scroll hacia la derecha y seleccionar el ![dia](https://escuelajailuba.website/fotos_clima/3.JPG) 
+
+
+
+
+
+
