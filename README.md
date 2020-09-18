@@ -1,6 +1,6 @@
 # Clima
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 8.1.2.
+Aplicacion Web que indica el clima de determinados paises con las respectivas ciudades.
 
 ## Development server
 
