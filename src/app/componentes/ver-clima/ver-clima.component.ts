@@ -61,10 +61,12 @@ export class VerClimaComponent implements OnInit {
   }
 
   public pronosticoPosterior(lat: number, lng: number) {
+    this.loading=true;
     this.climaService.onecall(lat, lng).subscribe((res) => {
       this.pronosticoAnterior(lat, lng);
 
       this.clima_actual = res;
+      this.loading=false
     });
   }
 

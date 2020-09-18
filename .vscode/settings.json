@@ -2,5 +2,7 @@
     "appService.zipIgnorePattern": [
         "node_modules{,/**}",
         ".vscode{,/**}"
-    ]
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/2fe53bb1-ffe8-455b-8c50-c38718a54425/resourceGroups/Pruebas/providers/Microsoft.Web/sites/ClimaAngular",
+    "appService.deploySubpath": "dist\\clima"
 }

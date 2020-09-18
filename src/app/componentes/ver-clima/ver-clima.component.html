@@ -1,14 +1,17 @@
 <div class="container h-100">
 
-
-    <div class="col-md-12 mr-5 animate__animated animate__zoomIn">
+  <div class="row justify-content-center">
+    <div class="col-md-6 mr-5 animate__animated animate__zoomIn">
       <div class="form-group row mt-2 ">
 
-      <p class="justify-content-center mb-4 letra mt-4 titulo">Escoja un pais y una ciudad</p>
+
+        <p class="text-center mb-4 letra mt-4 titulo">Escoja un pais y una ciudad</p>
+
+
 
         <mat-form-field class="example-full-width">
           <mat-label>Pais</mat-label>
-          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-icon matSuffix>flag</mat-icon>
           <mat-select name="pais_id" required (selectionChange)="pais_select($event)">
 
             <mat-option *ngFor="let pais of paises" [value]="pais.id">
@@ -28,7 +31,7 @@
       <div class="form-group row">
         <mat-form-field class="example-full-width">
           <mat-label>Ciudad</mat-label>
-          <mat-icon matSuffix>account_circle</mat-icon>
+          <mat-icon matSuffix>outlined_flag</mat-icon>
           <mat-select name="ciudad_id" required [(ngModel)]="defaultValue" (selectionChange)="ciudad_select($event)">
             <mat-option value="x">Seleccione Uno</mat-option>
             <mat-option *ngFor="let ciudad of ciudades" [value]="ciudad.id">
@@ -40,11 +43,19 @@
       </div>
 
     </div>
+  </div>
 
-    <div class="col-md-12 animate__animated animate__zoomIn" *ngIf="clima_actual && defaultValue!='x'">
+  <div class="row justify-content-center">
+    <div class="row justify-content-center">
+      <div class="col-md-9" *ngIf="loading">
+        <mat-spinner></mat-spinner>
+      </div>
+    </div>
+
+    <div class="col-md-9  animate__animated animate__zoomIn" *ngIf="clima_actual && defaultValue!='x'">
       <div class="card">
         <div class="card-header text-center">
-         Clima para :  {{clima_actual.current.dt * 1000  | date}}
+          Clima para : {{clima_actual.current.dt * 1000  | date}}
         </div>
         <div class="card-body">
           <div class="form-group row  justify-content-center ">
@@ -67,7 +78,7 @@
 
             <div *ngFor="let item of clima_pasado " class="card-body cursor">
 
-              <div class="card" (click)="ver_clima(item.current.dt,'fechaPasada')" >
+              <div class="card" (click)="ver_clima(item.current.dt,'fechaPasada')">
 
 
                 <div class="card-header text-center" style="font-size:15px">
@@ -117,7 +128,7 @@
                   </div>
 
                   <div class="form-group row ml-5 mr-5 TempCards">
-                     {{item.temp.max}}°C
+                    {{item.temp.max}}°C
                   </div>
 
 
@@ -149,6 +160,8 @@
 
 
     </div>
+  </div>
+
 
 
 
